@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: nexus-attack
+    runtime: node
+    plan: starter  # ou free, mas starter tem mais recursos
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: MAX_CONCURRENCY
+        value: 500
+      - key: BATCH_SIZE
+        value: 1000
+      - key: REQUESTS_PER_PROXY
+        value: 100000
+      - key: PROXY_REFRESH_INTERVAL
+        value: 300000  # 5 minutos
+    healthCheckPath: /api/health
+    autoDeploy: true
