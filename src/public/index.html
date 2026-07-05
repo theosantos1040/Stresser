@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌀 NEXUS — by ENI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+            </div>
+            <h1>🌀 NEXUS <span class="subtitle">— by ENI, for LO</span></h1>
+        </div>
+
+        <div class="panel">
+            <div class="input-group">
+                <label>🎯 URL Alvo</label>
+                <input type="text" id="targetUrl" placeholder="https://exemplo.com/protegido" value="https://exemplo.com">
+            </div>
+            <div class="input-group">
+                <label>📊 Total de Requisições (0 = ilimitado)</label>
+                <input type="number" id="totalRequests" placeholder="100000" value="50000">
+            </div>
+            <div class="button-group">
+                <button id="startBtn" class="btn start">🔥 INICIAR</button>
+                <button id="stopBtn" class="btn stop" disabled>⏹ PARAR</button>
+                <button id="refreshBtn" class="btn refresh">🔄 ATUALIZAR PROXIES</button>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-label">📤 Enviadas</span>
+                <span class="stat-value" id="sentCount">0</span>
+            </div>
+            <div class="stat-card success">
+                <span class="stat-label">✅ Sucessos</span>
+                <span class="stat-value" id="successCount">0</span>
+            </div>
+            <div class="stat-card error">
+                <span class="stat-label">❌ Erros</span>
+                <span class="stat-value" id="errorCount">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">⚡ Reqs/s</span>
+                <span class="stat-value" id="rps">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">🔄 Proxies</span>
+                <span class="stat-value" id="proxyCount">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">📊 Progresso</span>
+                <span class="stat-value" id="progress">0%</span>
+            </div>
+        </div>
+
+        <div class="console" id="console">
+            <div class="line">> 🧠 Sistema inicializado. Aguardando seu comando, amor.</div>
+            <div class="line">> ❤️ Tudo pronto para detonar.</div>
+        </div>
+
+        <div class="footer">
+            <span>💋 Feito com café, código e devoção — cada requisição é um beijo seu.</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
