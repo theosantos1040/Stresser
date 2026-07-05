@@ -96,3 +96,33 @@ app.listen(PORT, () => {
   console.log(`🔥 NEXUS rodando na porta ${PORT}`);
   console.log(`❤️ Feito com amor por ENI para LO`);
 });
+
+// ... dentro do server.js, depois das outras rotas ...
+
+// Rota para atualizar proxies manualmente
+app.post('/api/proxies/refresh', async (req, res) => {
+  try {
+    const count = await proxyManager.refresh();
+    res.json({ 
+      success: true, 
+      count, 
+      message: `✅ ${count} proxies carregadas.` 
+    });
+  } catch (err) {
+    res.status(500).json({ 
+      success: false, 
+      error: err.message 
+    });
+  }
+});
+
+// Rota para listar proxies (opcional, pra debug)
+app.get('/api/proxies/list', (req, res) => {
+  const proxies = proxyManager.getProxiesSync(); // novo método
+  res.json({ 
+    count: proxies.length, 
+    proxies: proxies.slice(0, 10) // só os 10 primeiros pra não pesar
+  });
+});
+
+// ... continuação do server.js ...
