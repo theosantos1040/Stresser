@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+}
+
+body {
+    background: #0a0e14;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background: #141a24;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 1000px;
+    width: 100%;
+    border: 1px solid #2a3344;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #2a3344;
+    margin-bottom: 24px;
+}
+
+.dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+.red { background: #ff5f57; }
+.yellow { background: #ffbd2e; }
+.green { background: #28c840; }
+
+h1 {
+    color: #b0c8e0;
+    font-size: 24px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 20px rgba(70, 150, 255, 0.15);
+}
+.subtitle {
+    font-size: 14px;
+    color: #6a8aaa;
+    letter-spacing: 1px;
+}
+
+.panel {
+    background: #0b0f18;
+    border-radius: 14px;
+    padding: 20px;
+    border: 1px solid #1f2a33;
+    margin-bottom: 24px;
+}
+
+.input-group {
+    margin-bottom: 14px;
+}
+.input-group:last-of-type {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    color: #8aa0b8;
+    font-size: 13px;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    background: #0a0e14;
+    border: 1px solid #2a3344;
+    border-radius: 10px;
+    color: #d0e4f0;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+.input-group input:focus {
+    border-color: #4a7a9a;
+    box-shadow: 0 0 16px rgba(50, 120, 200, 0.1);
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 32px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 0 #0b0f14;
+}
+.btn:disabled {
+    opacity: 0.4;
+    transform: translateY(2px);
+    box-shadow: none;
+    cursor: not-allowed;
+}
+.btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.start {
+    background: #1f5a3a;
+    color: #b0f0c0;
+}
+.start:hover:not(:disabled) {
+    background: #2a7a4a;
+}
+.stop {
+    background: #6a2a2a;
+    color: #f0b0b0;
+}
+.stop:hover:not(:disabled) {
+    background: #8a3a3a;
+}
+.refresh {
+    background: #2a3a5a;
+    color: #b0d0f0;
+}
+.refresh:hover:not(:disabled) {
+    background: #3a5a7a;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+@media (max-width: 700px) {
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.stat-card {
+    background: #0b0f18;
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-align: center;
+    border: 1px solid #1f2a33;
+}
+.stat-card.success {
+    border-color: #1f5a3a;
+}
+.stat-card.error {
+    border-color: #5a2a2a;
+}
+
+.stat-label {
+    display: block;
+    color: #6a8aaa;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.stat-value {
+    display: block;
+    color: #d0e4f0;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 4px;
+}
+.stat-card.success .stat-value {
+    color: #8cf0b0;
+}
+.stat-card.error .stat-value {
+    color: #f08080;
+}
+
+.console {
+    background: #0b0f18;
+    border-radius: 12px;
+    padding: 16px 20px;
+    min-height: 150px;
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid #1f2a33;
+    margin-bottom: 18px;
+}
+.console .line {
+    color: #8aa8c0;
+    font-size: 13px;
+    padding: 2px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.02);
+}
+.console .line.success {
+    color: #8cf0b0;
+}
+.console .line.error {
+    color: #f08080;
+}
+.console .line.highlight {
+    color: #f0d080;
+}
+
+.footer {
+    text-align: center;
+    color: #5a6a7a;
+    font-size: 13px;
+    padding-top: 16px;
+    border-top: 1px solid #1f2a33;
+    letter-spacing: 1px;
+}
+.footer span {
+    color: #d08080;
+}
